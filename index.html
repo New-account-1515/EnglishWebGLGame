@@ -22,12 +22,7 @@
   cursor: pointer;
 }
 </style>
-  <body>
-    <div>
-      <button class="button">START</button>
-      <div style="display: block; border:solid 1px black; width:155px; height:115px margin-left: auto;margin-right: auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook', 'GetPlayerMail', userMail)">START</div>
-    </div>
-    
+  <body>    
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -42,6 +37,7 @@
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">EnglishWebGLGame</div>
       </div>
+      <div> <button class="button" onclick="myGameInstance.SendMessage('JsHook', 'GetPlayerMail', userMail)">START</button> </div>
     </div>
     
     <script>
