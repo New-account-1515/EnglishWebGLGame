@@ -26,7 +26,11 @@
     </div>
     
     <div>
-      <div style="border:solid 1px black; width:225px; height:35px margin:auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook','GetPlayerMail','test@gmail.com')">START</div>
+      <form action="myGameInstance.SendMessage('JsHook','GetPlayerMail','test@gmail.com')">
+      <label for="lname">Player Mail:</label>
+      <input type="text" id="mail" name="mail"><br><br>
+      <input type="submit" value="Submit">
+      </form>
     </div>
     
     <script>
