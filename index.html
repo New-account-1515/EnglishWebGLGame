@@ -69,13 +69,6 @@
         showBanner: unityShowBanner,
       };
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
       canvas.style.width = "640px";
       canvas.style.height = "360px";
 
@@ -87,6 +80,7 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
+          myGameInstance = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
@@ -97,5 +91,8 @@
       };
       document.body.appendChild(script);
     </script>
+    <div>
+      <div style="border:solid 1px black; width:225px; height:35px margin:auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook','GetPlayerMail','test@gmail.com')">START</div>
+    </div>
   </body>
 </html>
