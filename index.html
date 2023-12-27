@@ -24,6 +24,11 @@
         <div id="unity-build-title">EnglishWebGLGame</div>
       </div>
     </div>
+    
+    <div>
+      <div style="border:solid 1px black; width:225px; height:35px margin:auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook','GetPlayerMail','test@gmail.com')">START</div>
+    </div>
+    
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -32,12 +37,6 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -91,8 +90,5 @@
       };
       document.body.appendChild(script);
     </script>
-    <div>
-      <div style="border:solid 1px black; width:225px; height:35px margin:auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook','GetPlayerMail','test@gmail.com')">START</div>
-    </div>
   </body>
 </html>
