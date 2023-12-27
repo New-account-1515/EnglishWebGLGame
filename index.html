@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
+    <div>
+      <div style="display: block; border:solid 1px black; width:155px; height:75px margin-left: auto;margin-right: auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook', 'GetPlayerMail', userMail)">START</div>
+    </div>
+    
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
@@ -23,10 +27,6 @@
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">EnglishWebGLGame</div>
       </div>
-    </div>
-    
-    <div>
-      <div style="border:solid 1px black; width:225px; height:35px margin:auto; text-align:center" onclick="myGameInstance.SendMessage('JsHook', 'GetPlayerMail', userMail)">START</div>
     </div>
     
     <script>
